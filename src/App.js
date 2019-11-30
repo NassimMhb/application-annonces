@@ -17,7 +17,7 @@ function App() {
                 <Link className="nav-link" to={"/accueil"}>Accueil</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to={"/seconnecter"}>Login</Link>
+                <Link className="nav-link" to={"/seconnecter"}>Se connecter</Link>
               </li>
             </ul>
           </div>
