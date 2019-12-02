@@ -20,3 +20,17 @@
 .App-link {
   color: #09d3ac;
 }
+
+.divFiche {
+  height: 200px;
+  background-color: #8BC34A;
+  width: 380px;
+  padding: 10px;
+  margin: 20px;
+}
+
+.parentDivFiche{
+  flex-wrap: wrap;
+  margin-top: 130px;
+  display: flex;
+}

@@ -7,6 +7,7 @@ import Logo from './images/logo.png';
 import Login from "./components/login.component";
 import Logout from "./components/logout.component";
 import Home from "./components/home.component";
+import Fiche from "./components/fiche.component";
 import Cookies from 'universal-cookie';
 import Keys from './constants/keys';
 
@@ -39,7 +40,7 @@ class App extends Component {
 
   
   render() {
-  return (<Router>
+  return (<Router >
     <div className="App">
       <nav className="navbar navbar-expand-lg navbar-light fixed-top">
         <div className="container">
@@ -50,6 +51,9 @@ class App extends Component {
                 <Link className="nav-link" to={"/accueil"}>Accueil</Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to={"/fiches"}>Fiches</Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to={{pathname:"/"+this.state.urlLog}}>{this.state.loginLogout}</Link>
               </li>
             </ul>
@@ -57,8 +61,7 @@ class App extends Component {
         </div>
       </nav>
 
-      <div className="auth-wrapper">
-        <div className="auth-inner">
+
           <Switch>
             <Route exact path='/' component={Home} />
             <Route path="/seconnecter" 
@@ -67,9 +70,10 @@ class App extends Component {
                   render={() => <Logout setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />} />      
             <Route path="/accueil"
                   render={() => <Home setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />}/>
+            <Route path="/fiches" 
+                  render={() => <Fiche setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />} />
           </Switch>
-        </div>
-      </div>
+
     </div></Router>
   );
 }

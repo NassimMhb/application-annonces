@@ -1,0 +1,24 @@
+[
+    {
+        "identifiant": "nassim",
+        "password": "123",
+        "role": "admin",
+        "nom": "Mhb",
+        "prenom":"Nassim"
+    },
+    {
+        "identifiant": "mehdi",
+        "password": "456",
+        "role": "chef",
+        "nom": "Asma",
+        "prenom":"Mehdi"
+    },
+    {
+        "identifiant": "mouloud",
+        "password": "789",
+        "role": "utilisateur",
+        "nom": "Achour",
+        "prenom":"Mouloud"
+    }
+]
+    
