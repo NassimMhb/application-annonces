@@ -143,6 +143,7 @@ class Autocomplete extends Component {
           onChange={onChange}
           onKeyDown={onKeyDown}
           value={userInput}
+          className="btnU"
         />
         {suggestionsListComponent}
       </Fragment>

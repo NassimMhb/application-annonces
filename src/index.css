@@ -74,7 +74,7 @@ body, html, .App, #root, .auth-wrapper {
 
 
 
-input {
+.btnU {
   margin-top: 100px !important;
   border: 1px solid #999;
   padding: 0.5rem;

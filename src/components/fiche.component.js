@@ -12,18 +12,6 @@ const Fiche = (props) => {
     const [fiches, setFiches] = useState({});
 
     const tabAuto = [];
-    const tabAutoUnique = [];
-
-    function removeDuplicates(words) {
-        let unique = [];
-        words.forEach(function(i) {
-          if(!unique[i]) {
-            unique[i] = true;
-          }
-        });
-    return unique;
-    }
-      
 
     console.log("deeded");
     useEffect(() => {
