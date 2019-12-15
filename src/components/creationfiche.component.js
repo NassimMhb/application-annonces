@@ -55,7 +55,7 @@ const CreationFiche = (props) => {
             <tbody>
             { Object.entries(fiches).length > 0 && fiches.map(fiche => {
                 return <tr>
-                <th scope="row">{fiche.identifiant}</th>
+                <th scope="row">{fiche.id}</th>
                 <td>{fiche.nomMission}</td>
                 <td>{fiche.client}</td>
                 <td>{fiche.ville}</td>
