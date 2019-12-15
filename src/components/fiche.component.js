@@ -46,9 +46,27 @@ const Fiche = (props) => {
             <div className="parentDivFiche">
             { Object.entries(fiches).length > 0 && fiches.map(fiche => {
                 return <div key={fiche.id} className="divFiche">
-                    <span>id: {fiche.id}</span>
+                    <span><span style={{color:"blue"}}>id : </span>{fiche.id}</span>
                     <br />
-                    <span>nomMission: {fiche.nomMission}</span>
+                    <span><span style={{color:"blue"}}>nom de la mission : </span>{fiche.nomMission}</span>
+                    <br />
+                    <span><span style={{color:"blue"}}>nom du client : </span>{fiche.client}</span>
+                    <br />
+                    <span><span style={{color:"blue"}}>ville : </span>{fiche.ville}</span>
+                    <br />
+                    <span><span style={{color:"blue"}}>departement : </span>{fiche.departement}</span>
+                    <br />
+                    <span><span style={{color:"blue"}}>annee début : </span>{fiche.anneeDebut}</span>
+                    <br />
+                    <span><span style={{color:"blue"}}>annee fin : </span>{fiche.anneeFin}</span>
+                    <br />
+                    <span><span style={{color:"blue"}}>details : </span>{fiche.details}</span>
+                    { props.isAuthenticated && 
+                    <>
+                        <br />
+                        <span><span style={{color:"blue"}}>montant : </span>{fiche.montant} euros</span>
+                    </>
+                    }
                 </div>      
                 })}
              </div>

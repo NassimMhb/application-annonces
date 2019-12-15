@@ -7,11 +7,14 @@ import { Redirect} from 'react-router-dom'
 import { withRouter } from 'react-router-dom';
 const cookies = new Cookies();
 
-const Login = (props) => {
+const Creation = (props) => {
 
     const [error, setError] = useState("");
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [role, setRole] = useState("");
+    const [nom, setNom] = useState("");
+    const [prenom, setPrenom] = useState("");
     const [users, setUsers] = useState({});
 
     useEffect(() => {
@@ -53,26 +56,58 @@ const Login = (props) => {
         props.isAuthenticated ? 
         <Redirect to={{ pathname: '/accueil' }} />
         :
-        <div className="auth-wrapper">
+        <div className="auth-wrapper marg40" >
+            <table class="table">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Role</th>
+                <th scope="col">Nom</th>
+                <th scope="col">Prenom</th>
+                </tr>
+            </thead>
+            <tbody>
+            { Object.entries(users).length > 0 && users.map(user => {
+                return <tr>
+                <th scope="row">{user.identifiant}</th>
+                <td>{user.role}</td>
+                <td>{user.nom}</td>
+                <td>{user.prenom}</td>
+                </tr>
+            })}
+            </tbody>
+            </table>
+
         <div className="auth-inner">
         <div>
         {
             error ? <span style={{color:"red"}}>{error}</span> : <div></div>
         }
         <form >
-            <h3><img src={Logo} alt="Logo" /></h3>
             
             <div className="form-group">
                 <label>Identifiant</label>
-                <input className="form-control" placeholder="Enter votre identifiant" value={username} onChange={e => setUsername(e.target.value)} />
+                <input className="form-control" placeholder="Enter l' identifiant" value={username} onChange={e => setUsername(e.target.value)} />
             </div>
 
             <div className="form-group">
                 <label>Mot de passe</label>
-                <input type="password" className="form-control" placeholder="Enter votre mot de passe" value={password} onChange={e => setPassword(e.target.value)} />
+                <input  className="form-control" placeholder="Enter le mot de passe" value={password} onChange={e => setPassword(e.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Role</label>
+                <input className="form-control" placeholder="Enter le role" value={role} onChange={e => setRole(e.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Nom</label>
+                <input className="form-control" placeholder="Enter le nom" value={nom} onChange={e => setNom(e.target.value)} />
+            </div>
+            <div className="form-group">
+                <label>Prénom</label>
+                <input className="form-control" placeholder="Enter le prénom" value={prenom} onChange={e => setPrenom(e.target.value)} />
             </div>
 
-            <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Se connecter</button>
+            <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Ajouter</button>
         </form>
         </div>
         </div>
@@ -81,4 +116,4 @@ const Login = (props) => {
     
 }
 
-export default withRouter(Login);
+export default Creation;

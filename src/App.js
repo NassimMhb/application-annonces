@@ -8,6 +8,7 @@ import Login from "./components/login.component";
 import Logout from "./components/logout.component";
 import Home from "./components/home.component";
 import Fiche from "./components/fiche.component";
+import Creation from "./components/creation.component";
 import Cookies from 'universal-cookie';
 import Keys from './constants/keys';
 
@@ -18,7 +19,8 @@ class App extends Component {
   state = {
     isAuthenticate: false,
     loginLogout : "Se connecter",
-    urlLog : "seconnecter"
+    urlLog : "seconnecter",
+    role:""
   }
   
   componentWillMount = () => {
@@ -30,11 +32,12 @@ class App extends Component {
     }
   }
   
-  setAuthenticate = (isAuthenticated, loginLogout, urlLog) => {
+  setAuthenticate = (isAuthenticated, loginLogout, urlLog, rrole) => {
     this.setState({
       isAuthenticated: isAuthenticated,
       loginLogout : loginLogout,
-      urlLog : urlLog
+      urlLog : urlLog,
+      role: rrole
     })
   }
 
@@ -49,6 +52,9 @@ class App extends Component {
             <ul className="navbar-nav ml-auto">
             <li className="nav-item">
                 <Link className="nav-link" to={"/accueil"}>Accueil</Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to={"/creation"}>Création</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={"/fiches"}>Fiches</Link>
@@ -70,6 +76,8 @@ class App extends Component {
                   render={() => <Logout setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />} />      
             <Route path="/accueil"
                   render={() => <Home setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />}/>
+            <Route path="/creation" 
+                  render={() => <Creation setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />} />
             <Route path="/fiches" 
                   render={() => <Fiche setAuthenticate={this.setAuthenticate} isAuthenticated={this.state.isAuthenticated} />} />
           </Switch>
