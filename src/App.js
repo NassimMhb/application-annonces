@@ -56,13 +56,13 @@ class App extends Component {
               </li>
               {this.state.role == "admin" &&
                 <li className="nav-item">
-                  <Link className="nav-link" to={"/creation"}>Création</Link>
+                  <Link className="nav-link" to={"/creation"}>GestionCompte</Link>
                 </li>
             
               }
               {this.state.role == "chef" || this.state.role == "admin" &&
                 <li className="nav-item">
-                  <Link className="nav-link" to={"/creationfiche"}>CréationFiche</Link>
+                  <Link className="nav-link" to={"/creationfiche"}>GestionFiche</Link>
                 </li>
             
               }
