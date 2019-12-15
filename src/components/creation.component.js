@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from "react";
 import Keys from '../constants/keys';
 import Cookies from 'universal-cookie';
-import Logo from '../images/logo.png';
 import { Redirect} from 'react-router-dom'
 
-import { withRouter } from 'react-router-dom';
 const cookies = new Cookies();
 
 const Creation = (props) => {
@@ -53,9 +51,6 @@ const Creation = (props) => {
     }
 
     return (
-        props.isAuthenticated ? 
-        <Redirect to={{ pathname: '/accueil' }} />
-        :
         <div className="auth-wrapper marg40" >
             <table class="table">
             <thead>
@@ -106,7 +101,6 @@ const Creation = (props) => {
                 <label>Prénom</label>
                 <input className="form-control" placeholder="Enter le prénom" value={prenom} onChange={e => setPrenom(e.target.value)} />
             </div>
-
             <button type="submit" className="btn btn-primary btn-block" onClick={handleSubmit}>Ajouter</button>
         </form>
         </div>

@@ -1,24 +1,24 @@
 [
     {
-        "identifiant": "nassim",
+        "identifiant": "mehdi",
         "password": "123",
         "role": "admin",
-        "nom": "Mhb",
-        "prenom":"Nassim"
-    },
-    {
-        "identifiant": "mehdi",
-        "password": "456",
-        "role": "chef",
         "nom": "Asma",
         "prenom":"Mehdi"
     },
     {
-        "identifiant": "mouloud",
+        "identifiant": "ayoub",
+        "password": "456",
+        "role": "chef",
+        "nom": "Ayoub",
+        "prenom":"Voulahya"
+    },
+    {
+        "identifiant": "userjon",
         "password": "789",
         "role": "utilisateur",
-        "nom": "Achour",
-        "prenom":"Mouloud"
+        "nom": "Jon",
+        "prenom":"Doe"
     }
 ]
     

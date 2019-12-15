@@ -31,8 +31,6 @@ const Login = (props) => {
         if (username && password) {
                 users.map(user => {
                     if(username == user.identifiant && password == user.password){
-                        console.log("ça marche")
-                        console.log(user.role)
                         props.setAuthenticate(true, "Se déconnecter", "sedeconnecter", user.role);
                         cookies.set(Keys.usernameKey, username);
                     }
@@ -44,7 +42,6 @@ const Login = (props) => {
         }
         else {
             e.preventDefault();
-            console.log("echec formulaire")
             setError("Veuillez entrer votre identifiant et votre mot de passe")
         }
     }
